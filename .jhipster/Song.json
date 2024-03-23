@@ -1,0 +1,136 @@
+{
+  "applications": "*",
+  "changelogDate": "20240323144703",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "song_table",
+  "fields": [
+    {
+      "fieldName": "artistName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "trackName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "releaseDate",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "genre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lyrics",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "len",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "dating",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "violence",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "worldLife",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "nightTime",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "shakeTheAudience",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "familyGospel",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "romantic",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "communication",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "obscene",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "music",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "movementPlaces",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "lightVisualPerceptions",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "familySpiritual",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "likeGirls",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "sadness",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "feelings",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "danceability",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "loudness",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "acousticness",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "instrumentalness",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "valence",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "energy",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "topic",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "age",
+      "fieldType": "Float"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Song",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

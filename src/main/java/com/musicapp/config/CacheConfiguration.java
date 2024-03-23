@@ -48,6 +48,7 @@ public class CacheConfiguration {
             createCache(cm, com.musicapp.domain.User.class.getName());
             createCache(cm, com.musicapp.domain.Authority.class.getName());
             createCache(cm, com.musicapp.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.musicapp.domain.Song.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

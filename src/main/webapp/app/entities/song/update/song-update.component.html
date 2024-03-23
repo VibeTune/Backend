@@ -1,0 +1,269 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-song-heading" data-cy="SongCreateUpdateHeading" jhiTranslate="bitirmeProjesiApp.song.home.createOrEditLabel">
+        Create or edit a Song
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.artistName" for="field_artistName">Artist Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="artistName"
+            id="field_artistName"
+            data-cy="artistName"
+            formControlName="artistName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.trackName" for="field_trackName">Track Name</label>
+          <input type="text" class="form-control" name="trackName" id="field_trackName" data-cy="trackName" formControlName="trackName" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.releaseDate" for="field_releaseDate">Release Date</label>
+          <input
+            type="number"
+            class="form-control"
+            name="releaseDate"
+            id="field_releaseDate"
+            data-cy="releaseDate"
+            formControlName="releaseDate"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.genre" for="field_genre">Genre</label>
+          <input type="text" class="form-control" name="genre" id="field_genre" data-cy="genre" formControlName="genre" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.lyrics" for="field_lyrics">Lyrics</label>
+          <input type="text" class="form-control" name="lyrics" id="field_lyrics" data-cy="lyrics" formControlName="lyrics" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.len" for="field_len">Len</label>
+          <input type="number" class="form-control" name="len" id="field_len" data-cy="len" formControlName="len" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.dating" for="field_dating">Dating</label>
+          <input type="number" class="form-control" name="dating" id="field_dating" data-cy="dating" formControlName="dating" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.violence" for="field_violence">Violence</label>
+          <input type="number" class="form-control" name="violence" id="field_violence" data-cy="violence" formControlName="violence" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.worldLife" for="field_worldLife">World Life</label>
+          <input type="number" class="form-control" name="worldLife" id="field_worldLife" data-cy="worldLife" formControlName="worldLife" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.nightTime" for="field_nightTime">Night Time</label>
+          <input type="number" class="form-control" name="nightTime" id="field_nightTime" data-cy="nightTime" formControlName="nightTime" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.shakeTheAudience" for="field_shakeTheAudience"
+            >Shake The Audience</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="shakeTheAudience"
+            id="field_shakeTheAudience"
+            data-cy="shakeTheAudience"
+            formControlName="shakeTheAudience"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.familyGospel" for="field_familyGospel">Family Gospel</label>
+          <input
+            type="number"
+            class="form-control"
+            name="familyGospel"
+            id="field_familyGospel"
+            data-cy="familyGospel"
+            formControlName="familyGospel"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.romantic" for="field_romantic">Romantic</label>
+          <input type="number" class="form-control" name="romantic" id="field_romantic" data-cy="romantic" formControlName="romantic" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.communication" for="field_communication">Communication</label>
+          <input
+            type="number"
+            class="form-control"
+            name="communication"
+            id="field_communication"
+            data-cy="communication"
+            formControlName="communication"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.obscene" for="field_obscene">Obscene</label>
+          <input type="number" class="form-control" name="obscene" id="field_obscene" data-cy="obscene" formControlName="obscene" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.music" for="field_music">Music</label>
+          <input type="number" class="form-control" name="music" id="field_music" data-cy="music" formControlName="music" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.movementPlaces" for="field_movementPlaces">Movement Places</label>
+          <input
+            type="number"
+            class="form-control"
+            name="movementPlaces"
+            id="field_movementPlaces"
+            data-cy="movementPlaces"
+            formControlName="movementPlaces"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.lightVisualPerceptions" for="field_lightVisualPerceptions"
+            >Light Visual Perceptions</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="lightVisualPerceptions"
+            id="field_lightVisualPerceptions"
+            data-cy="lightVisualPerceptions"
+            formControlName="lightVisualPerceptions"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.familySpiritual" for="field_familySpiritual"
+            >Family Spiritual</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="familySpiritual"
+            id="field_familySpiritual"
+            data-cy="familySpiritual"
+            formControlName="familySpiritual"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.likeGirls" for="field_likeGirls">Like Girls</label>
+          <input type="number" class="form-control" name="likeGirls" id="field_likeGirls" data-cy="likeGirls" formControlName="likeGirls" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.sadness" for="field_sadness">Sadness</label>
+          <input type="number" class="form-control" name="sadness" id="field_sadness" data-cy="sadness" formControlName="sadness" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.feelings" for="field_feelings">Feelings</label>
+          <input type="number" class="form-control" name="feelings" id="field_feelings" data-cy="feelings" formControlName="feelings" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.danceability" for="field_danceability">Danceability</label>
+          <input
+            type="number"
+            class="form-control"
+            name="danceability"
+            id="field_danceability"
+            data-cy="danceability"
+            formControlName="danceability"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.loudness" for="field_loudness">Loudness</label>
+          <input type="number" class="form-control" name="loudness" id="field_loudness" data-cy="loudness" formControlName="loudness" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.acousticness" for="field_acousticness">Acousticness</label>
+          <input
+            type="number"
+            class="form-control"
+            name="acousticness"
+            id="field_acousticness"
+            data-cy="acousticness"
+            formControlName="acousticness"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.instrumentalness" for="field_instrumentalness"
+            >Instrumentalness</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="instrumentalness"
+            id="field_instrumentalness"
+            data-cy="instrumentalness"
+            formControlName="instrumentalness"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.valence" for="field_valence">Valence</label>
+          <input type="number" class="form-control" name="valence" id="field_valence" data-cy="valence" formControlName="valence" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.energy" for="field_energy">Energy</label>
+          <input type="number" class="form-control" name="energy" id="field_energy" data-cy="energy" formControlName="energy" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.topic" for="field_topic">Topic</label>
+          <input type="text" class="form-control" name="topic" id="field_topic" data-cy="topic" formControlName="topic" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bitirmeProjesiApp.song.age" for="field_age">Age</label>
+          <input type="number" class="form-control" name="age" id="field_age" data-cy="age" formControlName="age" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

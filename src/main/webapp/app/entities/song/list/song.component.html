@@ -1,0 +1,281 @@
+<div>
+  <h2 id="page-heading" data-cy="SongHeading">
+    <span jhiTranslate="bitirmeProjesiApp.song.home.title">Songs</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="bitirmeProjesiApp.song.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-song"
+        [routerLink]="['/song/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="bitirmeProjesiApp.song.home.createLabel"> Create a new Song </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="songs?.length === 0">
+    <span jhiTranslate="bitirmeProjesiApp.song.home.notFound">No Songs found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="songs && songs.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="artistName">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.artistName">Artist Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="trackName">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.trackName">Track Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="releaseDate">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.releaseDate">Release Date</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="genre">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.genre">Genre</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="lyrics">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.lyrics">Lyrics</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="len">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.len">Len</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="dating">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.dating">Dating</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="violence">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.violence">Violence</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="worldLife">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.worldLife">World Life</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nightTime">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.nightTime">Night Time</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="shakeTheAudience">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.shakeTheAudience">Shake The Audience</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="familyGospel">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.familyGospel">Family Gospel</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="romantic">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.romantic">Romantic</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="communication">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.communication">Communication</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="obscene">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.obscene">Obscene</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="music">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.music">Music</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="movementPlaces">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.movementPlaces">Movement Places</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="lightVisualPerceptions">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.lightVisualPerceptions">Light Visual Perceptions</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="familySpiritual">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.familySpiritual">Family Spiritual</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="likeGirls">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.likeGirls">Like Girls</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="sadness">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.sadness">Sadness</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="feelings">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.feelings">Feelings</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="danceability">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.danceability">Danceability</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="loudness">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.loudness">Loudness</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="acousticness">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.acousticness">Acousticness</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="instrumentalness">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.instrumentalness">Instrumentalness</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="valence">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.valence">Valence</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="energy">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.energy">Energy</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="topic">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.topic">Topic</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="age">
+            <div class="d-flex">
+              <span jhiTranslate="bitirmeProjesiApp.song.age">Age</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let song of songs; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/song', song.id, 'view']">{{ song.id }}</a>
+          </td>
+          <td>{{ song.artistName }}</td>
+          <td>{{ song.trackName }}</td>
+          <td>{{ song.releaseDate }}</td>
+          <td>{{ song.genre }}</td>
+          <td>{{ song.lyrics }}</td>
+          <td>{{ song.len }}</td>
+          <td>{{ song.dating }}</td>
+          <td>{{ song.violence }}</td>
+          <td>{{ song.worldLife }}</td>
+          <td>{{ song.nightTime }}</td>
+          <td>{{ song.shakeTheAudience }}</td>
+          <td>{{ song.familyGospel }}</td>
+          <td>{{ song.romantic }}</td>
+          <td>{{ song.communication }}</td>
+          <td>{{ song.obscene }}</td>
+          <td>{{ song.music }}</td>
+          <td>{{ song.movementPlaces }}</td>
+          <td>{{ song.lightVisualPerceptions }}</td>
+          <td>{{ song.familySpiritual }}</td>
+          <td>{{ song.likeGirls }}</td>
+          <td>{{ song.sadness }}</td>
+          <td>{{ song.feelings }}</td>
+          <td>{{ song.danceability }}</td>
+          <td>{{ song.loudness }}</td>
+          <td>{{ song.acousticness }}</td>
+          <td>{{ song.instrumentalness }}</td>
+          <td>{{ song.valence }}</td>
+          <td>{{ song.energy }}</td>
+          <td>{{ song.topic }}</td>
+          <td>{{ song.age }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/song', song.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button type="submit" [routerLink]="['/song', song.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(song)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
