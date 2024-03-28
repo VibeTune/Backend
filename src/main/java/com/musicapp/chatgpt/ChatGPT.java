@@ -1,6 +1,6 @@
 package com.musicapp.chatgpt;
 
-import com.musicapp.responseFormatter.ResponseFormatter;
+import com.musicapp.responseFormatter.ResponseFormatterFromChatGPT;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,6 +13,7 @@ public class ChatGPT {
     public static String chatgpt(String s) {
         String formattedContent = "";
         try {
+            System.out.println("hereee");
             chatGptResponse = "";
             String mood = s;
             ProcessBuilder pb = new ProcessBuilder("python", "\"C:\\Users\\seyma\\Desktop\\chatgpt\\ChatGPT.py\"", mood);
@@ -30,7 +31,7 @@ public class ChatGPT {
             }
             System.out.println("ChatGPT Response: " + chatGptResponse);
             String filePath = "C:\\Users\\seyma\\Desktop\\BitirmeProjesi\\response.txt";
-            formattedContent = ResponseFormatter.formatResponse(filePath);
+            formattedContent = ResponseFormatterFromChatGPT.formatResponse(filePath);
             System.out.println("Formatted Response: " + formattedContent);
 
             int exitCode = process.waitFor();

@@ -1,5 +1,7 @@
 package com.musicapp.mistral;
 
+import com.musicapp.responseFormatter.ResponseFormatterFromAI;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -25,6 +27,13 @@ public class MistralEndPoint {
                 mistralResponse += line;
             }
             System.out.println("MİSTRAL ÇIKTISI: " + mistralResponse);
+            String mistralResponseformatted = "";
+            mistralResponseformatted = ResponseFormatterFromAI.formatResponse(mistralResponse);
+            if(!mistralResponseformatted.equals("AI formatter worked wrong")){
+                mistralResponse = mistralResponseformatted;
+            }
+            System.out.println("MİSTRAL ÇIKTISI FORMATLI HALİ: " + mistralResponse);
+
 
             int exitCode = process.waitFor();
             System.out.println("Python script exited with code: " + exitCode);

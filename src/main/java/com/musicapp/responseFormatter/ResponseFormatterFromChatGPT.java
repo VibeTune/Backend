@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class ResponseFormatter {
+public class ResponseFormatterFromChatGPT {
 
     public static String formatResponse(String filePath) {
         String content = readFileAsString(filePath);

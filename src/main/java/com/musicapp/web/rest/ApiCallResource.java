@@ -28,7 +28,7 @@ public class ApiCallResource {
     @GetMapping("/mistral")
     public  String mistral(){
         try {
-            Thread.sleep(15000); // 4 saniye beklet
+            Thread.sleep(10000); // 4 saniye beklet
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

@@ -1,6 +1,6 @@
 {
   "applications": "*",
-  "changelogDate": "20240323144703",
+  "changelogDate": "20240205130110",
   "dto": "no",
   "embedded": false,
   "entityTableName": "song_table",
