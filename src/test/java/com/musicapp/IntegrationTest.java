@@ -1,5 +1,6 @@
 package com.musicapp;
 
+import com.musicapp.MusicApp;
 import com.musicapp.config.AsyncSyncConfiguration;
 import com.musicapp.config.EmbeddedSQL;
 import java.lang.annotation.ElementType;

@@ -1,7 +1,9 @@
 package com.musicapp;
 
+import com.musicapp.chatgpt.ChatGPT;
 import com.musicapp.config.ApplicationProperties;
 import com.musicapp.config.CRLFLogConverter;
+import com.musicapp.mistral.MistralEndPoint;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Arrays;
@@ -32,7 +34,7 @@ public class MusicApp {
     }
 
     /**
-     * Initializes BitirmeProjesi.
+     * Initializes MusicApp.
      * <p>
      * Spring profiles can be configured with a program argument --spring.profiles.active=your-active-profile
      * <p>
@@ -68,6 +70,8 @@ public class MusicApp {
         SpringApplication app = new SpringApplication(MusicApp.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
+        // ChatGPT.chatgpt();
+        // MistralEndPoint.mistralEndpoint();
         logApplicationStartup(env);
     }
 
