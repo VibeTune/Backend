@@ -1,6 +1,5 @@
 package com.musicapp;
 
-import com.musicapp.BitirmeProjesiApp;
 import com.musicapp.config.AsyncSyncConfiguration;
 import com.musicapp.config.EmbeddedSQL;
 import java.lang.annotation.ElementType;
@@ -15,7 +14,7 @@ import org.springframework.test.annotation.DirtiesContext;
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@SpringBootTest(classes = { BitirmeProjesiApp.class, AsyncSyncConfiguration.class })
+@SpringBootTest(classes = { MusicApp.class, AsyncSyncConfiguration.class })
 @EmbeddedSQL
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 public @interface IntegrationTest {

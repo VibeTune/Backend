@@ -9,7 +9,7 @@ import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.lang.ArchRule;
 
-@AnalyzeClasses(packagesOf = BitirmeProjesiApp.class, importOptions = DoNotIncludeTests.class)
+@AnalyzeClasses(packagesOf = MusicApp.class, importOptions = DoNotIncludeTests.class)
 class TechnicalStructureTest {
 
     // prettier-ignore
@@ -29,7 +29,7 @@ class TechnicalStructureTest {
         .whereLayer("Persistence").mayOnlyBeAccessedByLayers("Service", "Security", "Web", "Config")
         .whereLayer("Domain").mayOnlyBeAccessedByLayers("Persistence", "Service", "Security", "Web", "Config")
 
-        .ignoreDependency(belongToAnyOf(BitirmeProjesiApp.class), alwaysTrue())
+        .ignoreDependency(belongToAnyOf(MusicApp.class), alwaysTrue())
         .ignoreDependency(alwaysTrue(), belongToAnyOf(
             com.musicapp.config.Constants.class,
             com.musicapp.config.ApplicationProperties.class
