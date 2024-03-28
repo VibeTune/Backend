@@ -1,8 +1,8 @@
 {
-  "name": "bitirme-projesi",
+  "name": "music-app",
   "version": "0.0.1-SNAPSHOT",
   "private": true,
-  "description": "Description for BitirmeProjesi",
+  "description": "Description for MusicApp",
   "license": "UNLICENSED",
   "scripts": {
     "app:start": "./mvnw",

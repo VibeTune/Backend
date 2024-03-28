@@ -6,11 +6,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.musicapp</groupId>
-    <artifactId>bitirme-projesi</artifactId>
+    <artifactId>music-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Bitirme Projesi</name>
-    <description>Description for BitirmeProjesi</description>
+    <name>Music App</name>
+    <description>Description for MusicApp</description>
 
     <repositories>
         <!-- jhipster-needle-maven-repository -->
@@ -295,6 +295,13 @@
             <artifactId>metrics-core</artifactId>
         </dependency>
         <!-- jhipster-needle-maven-add-dependency -->
+
+        <dependency>
+            <groupId>org.python</groupId>
+            <artifactId>jython-standalone</artifactId>
+            <version>2.7.2</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -577,7 +584,7 @@
                             </platforms>
                         </from>
                         <to>
-                            <image>bitirmeprojesi:latest</image>
+                            <image>musicapp:latest</image>
                         </to>
                         <container>
                             <entrypoint>
@@ -970,9 +977,9 @@
                                 <changeLogFile>${project.basedir}/src/main/resources/config/liquibase/master.xml</changeLogFile>
                                 <diffChangeLogFile>${project.basedir}/src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
                                 <driver>org.h2.Driver</driver>
-                                <url>jdbc:h2:file:${project.build.directory}/h2db/db/bitirmeprojesi</url>
+                                <url>jdbc:h2:file:${project.build.directory}/h2db/db/musicapp</url>
                                 <defaultSchemaName></defaultSchemaName>
-                                <username>BitirmeProjesi</username>
+                                <username>MusicApp</username>
                                 <password></password>
                                 <referenceUrl>hibernate:spring:com.musicapp.domain?dialect=org.hibernate.dialect.H2Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
                                 <verbose>true</verbose>
@@ -1069,9 +1076,9 @@
                                 <changeLogFile>${project.basedir}/src/main/resources/config/liquibase/master.xml</changeLogFile>
                                 <diffChangeLogFile>${project.basedir}/src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
                                 <driver>org.postgresql.Driver</driver>
-                                <url>jdbc:postgresql://localhost:5432/BitirmeProjesi</url>
+                                <url>jdbc:postgresql://localhost:5432/MusicApp</url>
                                 <defaultSchemaName></defaultSchemaName>
-                                <username>BitirmeProjesi</username>
+                                <username>MusicApp</username>
                                 <password></password>
                                 <referenceUrl>hibernate:spring:com.musicapp.domain?dialect=tech.jhipster.domain.util.FixedPostgreSQL10Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
                                 <verbose>true</verbose>

@@ -1,4 +1,9 @@
-# BitirmeProjesi
+<<<<<<< HEAD
+# Final_Project
+
+Our project advise music according to your feelings.
+=======
+# MusicApp
 
 This application was generated using JHipster 7.9.4, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v7.9.4](https://www.jhipster.tech/documentation-archive/v7.9.4).
 
@@ -121,7 +126,7 @@ docker-compose -f src/main/docker/jhipster-control-center.yml up
 
 ### Packaging as jar
 
-To build the final jar and optimize the BitirmeProjesi application for production, run:
+To build the final jar and optimize the MusicApp application for production, run:
 
 ```
 ./mvnw -Pprod clean verify
@@ -249,3 +254,4 @@ To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`)
 [leaflet]: https://leafletjs.com/
 [definitelytyped]: https://definitelytyped.org/
 [angular cli]: https://cli.angular.io/
+>>>>>>> 2629ab332bdea24f1ceabebf908d81a7545bdec4

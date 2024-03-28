@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "bitirme-projesi": {
+    "music-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -76,15 +76,15 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "bitirme-projesi:build:development",
+            "browserTarget": "music-app:build:development",
             "port": 4200
           },
           "configurations": {
             "production": {
-              "browserTarget": "bitirme-projesi:build:production"
+              "browserTarget": "music-app:build:production"
             },
             "development": {
-              "browserTarget": "bitirme-projesi:build:development"
+              "browserTarget": "music-app:build:development"
             }
           },
           "defaultConfiguration": "development"
