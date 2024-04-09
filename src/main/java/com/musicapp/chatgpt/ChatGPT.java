@@ -34,6 +34,7 @@ public class ChatGPT {
             formattedContent = ResponseFormatterFromChatGPT.formatResponse(filePath);
             System.out.println("Formatted Response: " + formattedContent);
 
+
             int exitCode = process.waitFor();
             System.out.println("Python script exited with code: " + exitCode);
         } catch (IOException | InterruptedException e) {

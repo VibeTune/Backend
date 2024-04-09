@@ -2,6 +2,8 @@ package com.musicapp.web.rest;
 
 import com.musicapp.chatgpt.ChatGPT;
 import com.musicapp.mistral.MistralEndPoint;
+import com.musicapp.responseFormatter.ResponseFormatterFromAI;
+import com.musicapp.responseFormatter.SongInfo;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,16 +27,34 @@ public class ApiCallResource {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Bir hata oluştu: " + e.getMessage());
         }
     }
+
+    String mistralResponseFormatted = "";
     @GetMapping("/mistral")
     public  String mistral(){
         try {
-            Thread.sleep(10000); // 4 saniye beklet
+            Thread.sleep(13000); // 10 saniye beklet
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        mistralResponseFormatted = MistralEndPoint.mistralResponse;
         System.out.println("BURDAYIZZ:");
-        System.out.println(MistralEndPoint.mistralResponse);
-        return  MistralEndPoint.mistralResponse;
+        System.out.println(mistralResponseFormatted);
+
+        //SongInfo songInfo = ResponseFormatterFromAI.parseSongInfo(mistralCiktisi);
+
+        return  mistralResponseFormatted;
+    }
+
+    @GetMapping("/songInfo")
+    public String getSongInfo(){
+        SongInfo songInfo = ResponseFormatterFromAI.parseSongInfo(mistralResponseFormatted);
+        if(songInfo != null &&
+            songInfo.getSong() != null && songInfo.getArtist() !=null ) {
+            System.out.println("SSSSSSSSSSSSSSSSSSSSSS:" + songInfo.getSong());
+            return songInfo.getSong() + " by " + songInfo.getArtist();
+        }
+        return "";
     }
 
 

@@ -1,1 +1,1 @@
-I'm sorry, but your message isn't clear. Could you please provide more information?
+genre: motivation/music, dating violence: 0, world/life: 0.5, night/time: 0.3, shake the audience: 0.9, family/gospel: 0.2, romantic: 0.3, communication: 0.8, obscene music: 0, movement/places: 0.6, light/visual perceptions: 0.5, family/spiritual: 0.2, like/girls: 0.3, sadness feelings: 1, danceability: 0.8, loudness: 0.9, acousticness: 0.2, instrumentalness: 0.1, valence: 0.7, energy: 0.9, topic: 1.

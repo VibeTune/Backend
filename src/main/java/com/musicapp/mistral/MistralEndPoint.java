@@ -1,6 +1,7 @@
 package com.musicapp.mistral;
 
 import com.musicapp.responseFormatter.ResponseFormatterFromAI;
+import com.musicapp.responseFormatter.SongInfo;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,6 +10,7 @@ import java.util.List;
 
 public class MistralEndPoint {
 
+    //public static String mistralResponse = "deneme";
     public static String mistralResponse = "deneme";
     public static void mistralEndpoint(String s) {
         try {
@@ -30,9 +32,12 @@ public class MistralEndPoint {
             String mistralResponseformatted = "";
             mistralResponseformatted = ResponseFormatterFromAI.formatResponse(mistralResponse);
             if(!mistralResponseformatted.equals("AI formatter worked wrong")){
-                mistralResponse = mistralResponseformatted;
+                mistralResponse = mistralResponseformatted.substring(0, mistralResponseformatted.length() - 3);
             }
+
             System.out.println("MİSTRAL ÇIKTISI FORMATLI HALİ: " + mistralResponse);
+
+            //SongInfo songInfo = ResponseFormatterFromAI.parseSongInfo(mistralResponse);
 
 
             int exitCode = process.waitFor();
